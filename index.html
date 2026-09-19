@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Lia Premium | Fast Food</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Tahoma, sans-serif;
+      background: #0b0b0b;
+      color: #f5ead7;
+      line-height: 1.7;
+    }
+
+    :root {
+      --gold: #c9a45c;
+      --gold-light: #e5c98c;
+      --cream: #f5ead7;
+      --dark: #0b0b0b;
+      --card: #151515;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(11,11,11,0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,164,92,0.25);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: var(--gold-light);
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 110px 20px 60px;
+
+      background:
+        radial-gradient(circle at center,
+        rgba(201,164,92,0.15),
+        transparent 45%),
+        linear-gradient(180deg,#0b0b0b,#111);
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero-logo {
+      width: 130px;
+      height: 130px;
+      margin: 0 auto 25px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-light);
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 10vw, 80px);
+      color: var(--gold-light);
+      margin-bottom: 5px;
+      letter-spacing: 2px;
+    }
+
+    .hero h2 {
+      font-size: 20px;
+      color: var(--cream);
+      font-weight: normal;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      color: #bdb4a5;
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: #111;
+      padding: 13px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 5px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--gold-light);
+      border: 1px solid var(--gold);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 80px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 35px;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #aaa;
+    }
+
+    /* ABOUT */
+    .about {
+      background: #101010;
+    }
+
+    .about-box {
+      background: var(--card);
+      border: 1px solid rgba(201,164,92,0.2);
+      border-radius: 20px;
+      padding: 35px;
+      text-align: center;
+    }
+
+    .about-box p {
+      color: #c9c0b3;
+      max-width: 750px;
+      margin: auto;
+    }
+
+    /* MENU */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+      gap: 20px;
+    }
+
+    .menu-card {
+      background: var(--card);
+      border: 1px solid rgba(201,164,92,0.2);
+      border-radius: 18px;
+      padding: 28px 20px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+
+    .menu-icon {
+      font-size: 45px;
+      margin-bottom: 12px;
+    }
+
+    .menu-card h3 {
+      color: var(--gold-light);
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .menu-card p {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    /* MENU IMAGE */
+    .full-menu {
+      margin-top: 35px;
+      text-align: center;
+    }
+
+    .full-menu img {
+      max-width: 100%;
+      border-radius: 15px;
+      border: 1px solid rgba(201,164,92,0.3);
+    }
+
+    /* CONTACT */
+    .contact {
+      background: #101010;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 20px;
+    }
+
+    .contact-card {
+      background: var(--card);
+      border: 1px solid rgba(201,164,92,0.2);
+      border-radius: 18px;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .contact-card h3 {
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+
+    .contact-card a {
+      color: #ccc;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      border-top: 1px solid rgba(201,164,92,0.2);
+      color: #888;
+      background: #080808;
+    }
+
+    footer strong {
+      color: var(--gold-light);
+    }
+
+    /* MOBILE */
+    @media (max-width: 650px) {
+
+      .nav-container {
+        justify-content: center;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      section {
+        padding: 65px 15px;
+      }
+
+      .hero {
+        min-height: 90vh;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+      }
+
+      .hero-logo {
+        width: 110px;
+        height: 110px;
+      }
+
+      .about-box {
+        padding: 25px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-container">
+
+      <div class="logo">
+        Lia Premium
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#about">عن المطعم</a></li>
+        <li><a href="#menu">المينو</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <div class="hero-logo">
+        LIA
+      </div>
+
+      <h1>Lia Premium</h1>
+
+      <h2>Fast Food • Fresh Taste • Premium Quality</h2>
+
+      <p>
+        أهلاً وسهلاً بكم في Lia Premium
+        <br>
+        مذاق مميز وتجربة مختلفة في كل وجبة
+      </p>
+
+      <a href="#menu" class="btn">
+        شاهد المينو
+      </a>
+
+      <a href="#contact" class="btn btn-outline">
+        تواصل معنا
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>عن Lia Premium</h2>
+        <p>Fast Food • Premium Experience</p>
+      </div>
+
+      <div class="about-box">
+
+        <p>
+          في Lia Premium نقدم لكم مجموعة متنوعة من الوجبات السريعة
+          المحضرة بعناية وبمذاق مميز.
+          <br><br>
+          هدفنا هو تقديم طعام لذيذ، جودة عالية، وتجربة تستحق العودة إليها.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MENU -->
+  <section id="menu">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>المينو</h2>
+        <p>اختر وجبتك المفضلة</p>
+      </div>
+
+      <div class="menu-grid">
+
+        <div class="menu-card">
+          <div class="menu-icon">🍔</div>
+          <h3>برجر</h3>
+          <p>برجر Lia Premium بتشكيلة مميزة</p>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-icon">🌯</div>
+          <h3>رول وتورتيلا</h3>
+          <p>وجبات تورتيلا ورول بالدجاج المقرمش</p>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-icon">🍗</div>
+          <h3>كرسبي</h3>
+          <p>دجاج كرسبي مقرمش ولذيذ</p>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-icon">🍟</div>
+          <h3>وجبات جانبية</h3>
+          <p>بطاطا وصوصات وإضافات متنوعة</p>
+        </div>
+
+      </div>
+
+      <div class="full-menu">
+
+        <a href="#contact" class="btn">
+          اطلب الآن
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>تواصل معنا</h2>
+        <p>يسعدنا استقبال طلباتكم واستفساراتكم</p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <h3>📱 الهاتف</h3>
+          <a href="tel:+972515178894">
+            051-517-8894
+          </a>
+        </div>
+
+        <div class="contact-card">
+          <h3>📞 الهاتف الآخر</h3>
+          <a href="tel:+972515881483">
+            051-588-1483
+          </a>
+        </div>
+
+        <div class="contact-card">
+          <h3>💬 WhatsApp</h3>
+          <a href="https://wa.me/972515881483" target="_blank">
+            تواصل معنا عبر واتساب
+          </a>
+        </div>
+
+        <div class="contact-card">
+          <h3>📸 Instagram</h3>
+          <a href="https://www.instagram.com/liapremium139" target="_blank">
+            @liapremium139
+          </a>
+        </div>
+
+        <div class="contact-card">
+          <h3>🎵 TikTok</h3>
+          <a href="https://www.tiktok.com/@lia.premium0" target="_blank">
+            @lia.premium0
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>
+      © 2026
+      <strong>Lia Premium</strong>
+      — Fast Food
+    </p>
+
+  </footer>
+
+</body>
+</html>
