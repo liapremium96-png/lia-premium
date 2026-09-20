@@ -1,252 +1,1952 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
 <title>Lia Premium | Fast Food</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,Tahoma,sans-serif;background:#0b0b0b;color:#f5ead7;line-height:1.7}
-:root{--gold:#c9a45c;--gold-light:#e5c98c;--cream:#f5ead7;--card:#151515}
-nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(11,11,11,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,164,92,.25)}
-.nav-container{max-width:1100px;margin:auto;padding:15px 20px;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:25px;font-weight:bold;color:var(--gold-light)}
-.nav-links{display:flex;gap:22px;list-style:none}
-.nav-links a{color:var(--cream);text-decoration:none;font-size:15px}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:110px 20px 60px;background:radial-gradient(circle at center,rgba(201,164,92,.15),transparent 45%),linear-gradient(180deg,#0b0b0b,#111)}
-.hero-content{max-width:800px}
-.hero-logo{width:130px;height:130px;margin:0 auto 25px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold-light);font-size:22px;font-weight:bold}
-.hero h1{font-size:clamp(45px,10vw,80px);color:var(--gold-light);margin-bottom:5px;letter-spacing:2px}
-.hero h2{font-size:20px;color:var(--cream);font-weight:normal;margin-bottom:15px}
-.hero p{color:#bdb4a5;font-size:16px;margin-bottom:30px}
-.btn{display:inline-block;background:var(--gold);color:#111;padding:13px 28px;border-radius:30px;text-decoration:none;font-weight:bold;margin:5px}
-.btn-outline{background:transparent;color:var(--gold-light);border:1px solid var(--gold)}
-section{padding:80px 20px}
-.container{max-width:1100px;margin:auto}
-.section-title{text-align:center;margin-bottom:45px}
-.section-title h2{font-size:35px;color:var(--gold-light);margin-bottom:8px}
-.section-title p{color:#aaa}
-.about{background:#101010}
-.about-box{background:var(--card);border:1px solid rgba(201,164,92,.2);border-radius:20px;padding:35px;text-align:center}
-.about-box p{color:#c9c0b3;max-width:750px;margin:auto}
-.full-menu-text{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-.menu-section{background:var(--card);border:1px solid rgba(201,164,92,.28);border-radius:18px;padding:22px;box-shadow:0 8px 30px rgba(0,0,0,.18)}
-.menu-section h3{text-align:center;color:var(--gold-light);font-size:25px;margin-bottom:14px;border-bottom:1px solid rgba(201,164,92,.25);padding-bottom:10px}
-.menu-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06);color:#eee;font-size:16px}
-.menu-row strong{color:#111;background:var(--gold-light);border-radius:20px;padding:2px 10px;white-space:nowrap;font-size:14px}
-.note{text-align:center;color:var(--gold-light);margin-top:12px;font-weight:bold}
-.contact{background:#101010}
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.contact-card{background:var(--card);border:1px solid rgba(201,164,92,.2);border-radius:18px;padding:25px;text-align:center}
-.contact-card h3{color:var(--gold-light);margin-bottom:8px}
-.contact-card a{color:#ccc;text-decoration:none;word-break:break-word}
-footer{text-align:center;padding:30px 20px;border-top:1px solid rgba(201,164,92,.2);color:#888;background:#080808}
-footer strong{color:var(--gold-light)}
-@media(max-width:650px){
-.nav-container{justify-content:center}
-.nav-links{display:none}
-section{padding:65px 15px}
-.hero{min-height:90vh}
-.hero h1{font-size:52px}
-.hero-logo{width:110px;height:110px}
-.about-box{padding:25px 18px}
-.full-menu-text{grid-template-columns:1fr}
-.menu-section h3{font-size:23px}
-.menu-row{font-size:15px}
+
+/* =========================
+   GENERAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Tahoma,Arial,sans-serif;
+    background:#090909;
+    color:#f5ead7;
+    line-height:1.7;
+    padding-bottom:70px;
+}
+
+:root{
+    --gold:#d4af61;
+    --gold-light:#f0d18b;
+    --cream:#f7edda;
+    --black:#090909;
+    --card:#151515;
+    --card2:#1c1c1c;
+    --gray:#999;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    z-index:9999;
+
+    background:rgba(9,9,9,.96);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:
+    1px solid rgba(212,175,97,.25);
+}
+
+.nav{
+    max-width:1150px;
+    margin:auto;
+
+    padding:14px 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo-text{
+    color:var(--gold-light);
+    font-size:25px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#eee;
+    text-decoration:none;
+    font-size:15px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--gold-light);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:
+    120px 20px 70px;
+
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(212,175,97,.16),
+        transparent 43%
+    ),
+
+    linear-gradient(
+        180deg,
+        #090909,
+        #111
+    );
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+
+/* REAL LOGO */
+
+.real-logo{
+    width:155px;
+    height:155px;
+
+    margin:0 auto 28px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#090909;
+
+    border:
+    2px solid var(--gold);
+
+    box-shadow:
+    0 0 35px rgba(212,175,97,.20),
+    0 0 80px rgba(212,175,97,.08);
+
+    overflow:hidden;
+}
+
+.real-logo img{
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    padding:8px;
+
+    display:block;
+}
+
+
+.hero h1{
+    font-size:
+    clamp(45px,10vw,78px);
+
+    color:var(--gold-light);
+
+    line-height:1.1;
+
+    margin-bottom:10px;
+}
+
+.hero-subtitle{
+    font-size:20px;
+    color:#eee;
+    margin-bottom:10px;
+}
+
+.hero-text{
+    color:#aaa;
+    font-size:16px;
+    margin-bottom:30px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.btn{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:
+    13px 27px;
+
+    border-radius:30px;
+
+    background:var(--gold);
+
+    color:#111;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+
+    background:var(--gold-light);
+}
+
+.btn-outline{
+    background:transparent;
+
+    color:var(--gold-light);
+
+    border:
+    1px solid var(--gold);
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    padding:80px 18px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    color:var(--gold-light);
+    font-size:35px;
+    margin-bottom:5px;
+}
+
+.section-title p{
+    color:#999;
+}
+
+
+/* =========================
+   QUICK ACTIONS
+========================= */
+
+.quick-actions{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:15px;
+
+    margin-bottom:10px;
+}
+
+.action{
+
+    background:var(--card);
+
+    border:
+    1px solid rgba(212,175,97,.20);
+
+    border-radius:18px;
+
+    padding:20px 10px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:#eee;
+
+    transition:.3s;
+}
+
+.action:hover{
+
+    transform:translateY(-3px);
+
+    border-color:var(--gold);
+}
+
+.action-icon{
+
+    font-size:28px;
+
+    margin-bottom:6px;
+}
+
+.action strong{
+
+    display:block;
+
+    color:var(--gold-light);
+}
+
+.action small{
+
+    color:#999;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.menu{
+    background:#0d0d0d;
+}
+
+.menu-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:20px;
+}
+
+.menu-card{
+
+    background:
+    linear-gradient(
+        145deg,
+        #181818,
+        #111
+    );
+
+    border:
+    1px solid rgba(212,175,97,.25);
+
+    border-radius:20px;
+
+    padding:22px;
+
+    box-shadow:
+    0 10px 30px
+    rgba(0,0,0,.25);
+}
+
+.menu-card h3{
+
+    text-align:center;
+
+    color:var(--gold-light);
+
+    font-size:24px;
+
+    padding-bottom:13px;
+
+    margin-bottom:5px;
+
+    border-bottom:
+    1px solid rgba(212,175,97,.22);
+}
+
+.menu-item{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:12px;
+
+    padding:13px 3px;
+
+    border-bottom:
+    1px solid rgba(255,255,255,.06);
+}
+
+.menu-item:last-child{
+    border-bottom:0;
+}
+
+.item-name{
+
+    color:#eee;
+
+    font-size:15px;
+}
+
+.price{
+
+    background:var(--gold-light);
+
+    color:#111;
+
+    min-width:62px;
+
+    text-align:center;
+
+    padding:
+    3px 10px;
+
+    border-radius:20px;
+
+    font-weight:bold;
+
+    white-space:nowrap;
+}
+
+.note{
+
+    text-align:center;
+
+    color:var(--gold);
+
+    font-size:13px;
+
+    margin-top:12px;
+
+    font-weight:bold;
+}
+
+
+/* =========================
+   ORDER
+========================= */
+
+.order-section{
+
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(212,175,97,.12),
+        transparent 55%
+    ),
+
+    #101010;
+}
+
+.order-box{
+
+    max-width:750px;
+
+    margin:auto;
+
+    text-align:center;
+
+    background:var(--card);
+
+    border:
+    1px solid rgba(212,175,97,.3);
+
+    border-radius:25px;
+
+    padding:40px 25px;
+}
+
+.order-box h2{
+
+    color:var(--gold-light);
+
+    font-size:32px;
+
+    margin-bottom:10px;
+}
+
+.order-box p{
+
+    color:#aaa;
+
+    margin-bottom:25px;
+}
+
+.whatsapp-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:12px;
+}
+
+.whatsapp{
+
+    background:var(--gold);
+
+    color:#111;
+
+    padding:
+    13px 22px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.whatsapp:hover{
+
+    background:var(--gold-light);
+
+    transform:translateY(-2px);
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    background:#0d0d0d;
+}
+
+.contact-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:18px;
+}
+
+.contact-card{
+
+    background:var(--card);
+
+    border:
+    1px solid rgba(212,175,97,.20);
+
+    border-radius:18px;
+
+    padding:23px;
+
+    text-align:center;
+}
+
+.contact-card .icon{
+
+    font-size:28px;
+
+    margin-bottom:8px;
+}
+
+.contact-card h3{
+
+    color:var(--gold-light);
+
+    margin-bottom:7px;
+}
+
+.contact-card a{
+
+    color:#ccc;
+
+    text-decoration:none;
+
+    word-break:break-word;
+}
+
+.contact-card a:hover{
+
+    color:var(--gold-light);
+}
+
+
+/* =========================
+   SOCIAL
+========================= */
+
+.socials{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:25px;
+}
+
+.social{
+
+    padding:
+    11px 18px;
+
+    border:
+    1px solid rgba(212,175,97,.35);
+
+    border-radius:25px;
+
+    color:var(--gold-light);
+
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.social:hover{
+
+    background:var(--gold);
+
+    color:#111;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    text-align:center;
+
+    padding:
+    30px 20px;
+
+    background:#070707;
+
+    border-top:
+    1px solid rgba(212,175,97,.20);
+
+    color:#777;
+}
+
+footer strong{
+    color:var(--gold-light);
+}
+
+
+/* =========================
+   MOBILE BAR
+========================= */
+
+.mobile-bar{
+
+    position:fixed;
+
+    bottom:0;
+
+    right:0;
+
+    left:0;
+
+    height:65px;
+
+    background:
+    rgba(10,10,10,.98);
+
+    border-top:
+    1px solid rgba(212,175,97,.30);
+
+    display:none;
+
+    z-index:9999;
+}
+
+.mobile-bar a{
+
+    flex:1;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:#eee;
+
+    font-size:11px;
+
+    padding-top:7px;
+}
+
+.mobile-bar span{
+
+    display:block;
+
+    font-size:21px;
+}
+
+.mobile-bar .main{
+
+    color:var(--gold-light);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:800px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .nav{
+        justify-content:center;
+    }
+
+    .quick-actions{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .menu-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .contact-grid{
+
+        grid-template-columns:1fr;
+    }
+}
+
+
+/* =========================
+   PHONE
+========================= */
+
+@media(max-width:600px){
+
+    body{
+        padding-bottom:65px;
+    }
+
+    section{
+        padding:
+        65px 14px;
+    }
+
+    .hero{
+
+        min-height:90vh;
+
+        padding:
+        110px 20px 70px;
+    }
+
+    .real-logo{
+
+        width:115px;
+
+        height:115px;
+
+        margin-bottom:22px;
+    }
+
+    .hero h1{
+
+        font-size:50px;
+    }
+
+    .hero-subtitle{
+
+        font-size:17px;
+    }
+
+    .section-title h2{
+
+        font-size:30px;
+    }
+
+    .quick-actions{
+
+        gap:10px;
+    }
+
+    .action{
+
+        padding:
+        16px 7px;
+    }
+
+    .menu-card{
+
+        padding:
+        18px 15px;
+    }
+
+    .menu-card h3{
+
+        font-size:22px;
+    }
+
+    .menu-item{
+
+        padding:
+        12px 0;
+    }
+
+    .item-name{
+
+        font-size:14px;
+    }
+
+    .price{
+
+        min-width:58px;
+
+        font-size:13px;
+    }
+
+    .mobile-bar{
+
+        display:flex;
+    }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
-<nav>
-<div class="nav-container">
-<div class="logo">Lia Premium</div>
-<ul class="nav-links">
-<li><a href="#home">الرئيسية</a></li>
-<li><a href="#about">عن المطعم</a></li>
-<li><a href="#menu">المينو</a></li>
-<li><a href="#contact">تواصل معنا</a></li>
-</ul>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header class="navbar">
+
+<div class="nav">
+
+<div class="logo-text">
+Lia Premium
 </div>
-</nav>
+
+<ul class="nav-links">
+
+<li>
+<a href="#home">
+الرئيسية
+</a>
+</li>
+
+<li>
+<a href="#menu">
+المينو
+</a>
+</li>
+
+<li>
+<a href="#order">
+اطلب الآن
+</a>
+</li>
+
+<li>
+<a href="#contact">
+تواصل معنا
+</a>
+</li>
+
+</ul>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+     HOME
+========================= -->
 
 <section class="hero" id="home">
+
 <div class="hero-content">
-<div class="hero-logo">LIA</div>
-<h1>Lia Premium</h1>
-<h2>Fast Food • Fresh Taste • Premium Quality</h2>
-<p>أهلاً وسهلاً بكم في Lia Premium<br>مذاق مميز وتجربة مختلفة في كل وجبة</p>
-<a href="#menu" class="btn">شاهد المينو</a>
-<a href="#contact" class="btn btn-outline">تواصل معنا</a>
-</div>
-</section>
 
-<section id="about" class="about">
-<div class="container">
-<div class="section-title">
-<h2>عن Lia Premium</h2>
-<p>Fast Food • Premium Experience</p>
+
+<!-- REAL LIA PREMIUM LOGO -->
+
+<div class="real-logo">
+
+<img
+src="logo.webp"
+alt="Lia Premium Logo"
+>
+
 </div>
 
-<div class="about-box">
-<p>
-في Lia Premium نقدم لكم مجموعة متنوعة من الوجبات السريعة المحضرة بعناية وبمذاق مميز.
-<br><br>
-هدفنا هو تقديم طعام لذيذ، جودة عالية، وتجربة تستحق العودة إليها.
+
+<h1>
+Lia Premium
+</h1>
+
+
+<div class="hero-subtitle">
+Fast Food • Fresh Taste
+</div>
+
+
+<p class="hero-text">
+وجبات سريعة بطعم مميز
 </p>
+
+
+<div class="buttons">
+
+<a
+href="#menu"
+class="btn"
+>
+شاهد المينو
+</a>
+
+
+<a
+href="#order"
+class="btn btn-outline"
+>
+اطلب الآن
+</a>
+
 </div>
+
+
 </div>
+
 </section>
 
-<section id="menu">
+
+<!-- =========================
+     QUICK ACTIONS
+========================= -->
+
+<section>
+
 <div class="container">
 
+
 <div class="section-title">
-<h2>المينو</h2>
-<p>Lia Premium — Fast Food • Fresh Taste</p>
-</div>
 
-<div class="full-menu-text">
+<h2>
+Lia Premium
+</h2>
 
-<div class="menu-section">
-<h3>وجبات شخصية</h3>
-<div class="menu-row"><span>اصابع كرسبي (5 قطع)</span><strong>30 ₪</strong></div>
-<div class="menu-row"><span>اجنحة دجاج (12 قطع)</span><strong>30 ₪</strong></div>
-<div class="menu-row"><span>اجنحة دجاج مع صوص (12 قطع)</span><strong>35 ₪</strong></div>
-<div class="menu-row"><span>وجبة جمبري (8 قطع)</span><strong>30 ₪</strong></div>
-<p class="note">تقدم مع بطاطا ومخلل</p>
-</div>
-
-<div class="menu-section">
-<h3>وجبات الأطفال</h3>
-<div class="menu-row"><span>اصابع كرسبي (3 قطع)</span><strong>15 ₪</strong></div>
-<div class="menu-row"><span>برجر اطفال دجاج</span><strong>15 ₪</strong></div>
-<div class="menu-row"><span>وجبة اجنحة (4 قطع)</span><strong>15 ₪</strong></div>
-<p class="note">تقدم مع بطاطا</p>
-</div>
-
-<div class="menu-section">
-<h3>الساندويشات</h3>
-<div class="menu-row"><span>مسحب سمون</span><strong>16 ₪</strong></div>
-<div class="menu-row"><span>مسحب باجيت</span><strong>22 ₪</strong></div>
-<div class="menu-row"><span>فاهيتا</span><strong>25 ₪</strong></div>
-<div class="menu-row"><span>برجر لحمة (150 جرام)</span><strong>30 ₪</strong></div>
-<div class="menu-row"><span>برجر دجاج كرسبي</span><strong>25 ₪</strong></div>
-<div class="menu-row"><span>برجر دجاج جريل</span><strong>26 ₪</strong></div>
-<div class="menu-row"><span>نقانق</span><strong>10 ₪</strong></div>
-<div class="menu-row"><span>شنيتسل سمون</span><strong>15 ₪</strong></div>
-<div class="menu-row"><span>شنيتسل باجيت</span><strong>20 ₪</strong></div>
-<p class="note">تقدم مع بطاطا ومخلل</p>
-</div>
-
-<div class="menu-section">
-<h3>السلطات</h3>
-<div class="menu-row"><span>سلطة سيزر — صغير</span><strong>13 ₪</strong></div>
-<div class="menu-row"><span>سلطة سيزر — كبير</span><strong>20 ₪</strong></div>
-<div class="menu-row"><span>سلطة بريميوم المميزة — صغير</span><strong>10 ₪</strong></div>
-<div class="menu-row"><span>سلطة بريميوم المميزة — كبير</span><strong>18 ₪</strong></div>
-<div class="menu-row"><span>خبيصة — صغير</span><strong>13 ₪</strong></div>
-<div class="menu-row"><span>خبيصة — كبير</span><strong>22 ₪</strong></div>
-<div class="menu-row"><span>اضافة دجاج</span><strong>6 ₪</strong></div>
-</div>
-
-<div class="menu-section">
-<h3>الإضافات</h3>
-<div class="menu-row"><span>فلفل هالبينو</span><strong>2 ₪</strong></div>
-<div class="menu-row"><span>جبنة</span><strong>5 ₪</strong></div>
-<div class="menu-row"><span>فطر</span><strong>5 ₪</strong></div>
-<div class="menu-row"><span>علبة صوص</span><strong>2 ₪</strong></div>
-<div class="menu-row"><span>خبزة سمون</span><strong>1 ₪</strong></div>
-<div class="menu-row"><span>اصبع كرسبي</span><strong>5 ₪</strong></div>
-<div class="menu-row"><span>قطعة دجاج</span><strong>7 ₪</strong></div>
-<div class="menu-row"><span>بطاطا صغير</span><strong>7 ₪</strong></div>
-<div class="menu-row"><span>بطاطا كبير</span><strong>12 ₪</strong></div>
-</div>
-
-<div class="menu-section">
-<h3>المشروبات</h3>
-<div class="menu-row"><span>كولا صغير</span><strong>4 ₪</strong></div>
-<div class="menu-row"><span>كولا كبير</span><strong>5 ₪</strong></div>
-<div class="menu-row"><span>بلو</span><strong>5 ₪</strong></div>
-<div class="menu-row"><span>اكس ال</span><strong>5 ₪</strong></div>
-<div class="menu-row"><span>صودا</span><strong>6 ₪</strong></div>
-<div class="menu-row"><span>ماء صغير</span><strong>2 ₪</strong></div>
-<div class="menu-row"><span>ماء كبير</span><strong>3 ₪</strong></div>
-<div class="menu-row"><span>عصير صغير</span><strong>4 ₪</strong></div>
-<div class="menu-row"><span>عصير كبير</span><strong>6 ₪</strong></div>
-<div class="menu-row"><span>شويبس</span><strong>5 ₪</strong></div>
-<div class="menu-row"><span>كازوز</span><strong>5 ₪</strong></div>
-<div class="menu-row"><span>عصير اطفال</span><strong>2 ₪</strong></div>
-</div>
+<p>
+كل ما تحتاجه في مكان واحد
+</p>
 
 </div>
 
-<div style="text-align:center;margin-top:30px">
-<a href="#contact" class="btn">اطلب الآن</a>
+
+<div class="quick-actions">
+
+
+<a
+href="#menu"
+class="action"
+>
+
+<div class="action-icon">
+🍔
+</div>
+
+<strong>
+المينو
+</strong>
+
+<small>
+الوجبات والأسعار
+</small>
+
+</a>
+
+
+<a
+href="#order"
+class="action"
+>
+
+<div class="action-icon">
+📱
+</div>
+
+<strong>
+اطلب الآن
+</strong>
+
+<small>
+عبر واتساب
+</small>
+
+</a>
+
+
+<a
+href="https://maps.apple/p/6u~E6gAGFhY9Fc"
+target="_blank"
+class="action"
+>
+
+<div class="action-icon">
+📍
+</div>
+
+<strong>
+الموقع
+</strong>
+
+<small>
+Apple Maps
+</small>
+
+</a>
+
+
+<a
+href="#contact"
+class="action"
+>
+
+<div class="action-icon">
+📞
+</div>
+
+<strong>
+تواصل معنا
+</strong>
+
+<small>
+الهاتف والسوشيال
+</small>
+
+</a>
+
+
 </div>
 
 </div>
+
 </section>
 
-<section id="contact" class="contact">
+
+<!-- =========================
+     MENU
+========================= -->
+
+<section
+class="menu"
+id="menu"
+>
+
 <div class="container">
 
+
 <div class="section-title">
-<h2>تواصل معنا</h2>
-<p>يسعدنا استقبال طلباتكم واستفساراتكم</p>
+
+<h2>
+المينو
+</h2>
+
+<p>
+Lia Premium — Fast Food • Fresh Taste
+</p>
+
 </div>
+
+
+<div class="menu-grid">
+
+
+<!-- PERSONAL MEALS -->
+
+<div class="menu-card">
+
+<h3>
+وجبات شخصية
+</h3>
+
+
+<div class="menu-item">
+
+<span class="item-name">
+اصابع كرسبي (5 قطع)
+</span>
+
+<span class="price">
+30 ₪
+</span>
+
+</div>
+
+
+<div class="menu-item">
+
+<span class="item-name">
+اجنحة دجاج (12 قطع)
+</span>
+
+<span class="price">
+30 ₪
+</span>
+
+</div>
+
+
+<div class="menu-item">
+
+<span class="item-name">
+اجنحة دجاج مع صوص (12 قطع)
+</span>
+
+<span class="price">
+35 ₪
+</span>
+
+</div>
+
+
+<div class="menu-item">
+
+<span class="item-name">
+وجبة جمبري (8 قطع)
+</span>
+
+<span class="price">
+30 ₪
+</span>
+
+</div>
+
+
+<div class="note">
+تقدم مع بطاطا ومخلل
+</div>
+
+</div>
+
+
+<!-- KIDS -->
+
+<div class="menu-card">
+
+<h3>
+وجبات الأطفال
+</h3>
+
+
+<div class="menu-item">
+
+<span class="item-name">
+اصابع كرسبي (3 قطع)
+</span>
+
+<span class="price">
+15 ₪
+</span>
+
+</div>
+
+
+<div class="menu-item">
+
+<span class="item-name">
+برجر اطفال دجاج
+</span>
+
+<span class="price">
+15 ₪
+</span>
+
+</div>
+
+
+<div class="menu-item">
+
+<span class="item-name">
+وجبة اجنحة (4 قطع)
+</span>
+
+<span class="price">
+15 ₪
+</span>
+
+</div>
+
+
+<div class="note">
+تقدم مع بطاطا
+</div>
+
+</div>
+
+
+<!-- SANDWICHES -->
+
+<div class="menu-card">
+
+<h3>
+الساندويشات
+</h3>
+
+
+<div class="menu-item">
+<span class="item-name">
+مسحب سمون
+</span>
+<span class="price">
+16 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+مسحب باجيت
+</span>
+<span class="price">
+22 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+فاهيتا
+</span>
+<span class="price">
+25 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+برجر لحمة (150 جرام)
+</span>
+<span class="price">
+30 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+برجر دجاج كرسبي
+</span>
+<span class="price">
+25 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+برجر دجاج جريل
+</span>
+<span class="price">
+26 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+نقانق
+</span>
+<span class="price">
+10 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+شنيتسل سمون
+</span>
+<span class="price">
+15 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+شنيتسل باجيت
+</span>
+<span class="price">
+20 ₪
+</span>
+</div>
+
+
+<div class="note">
+تقدم مع بطاطا ومخلل
+</div>
+
+</div>
+
+
+<!-- SALADS -->
+
+<div class="menu-card">
+
+<h3>
+السلطات
+</h3>
+
+
+<div class="menu-item">
+<span class="item-name">
+سلطة سيزر — صغير
+</span>
+<span class="price">
+13 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+سلطة سيزر — كبير
+</span>
+<span class="price">
+20 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+سلطة بريميوم المميزة — صغير
+</span>
+<span class="price">
+10 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+سلطة بريميوم المميزة — كبير
+</span>
+<span class="price">
+18 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+خبيصة — صغير
+</span>
+<span class="price">
+13 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+خبيصة — كبير
+</span>
+<span class="price">
+22 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+اضافة دجاج
+</span>
+<span class="price">
+6 ₪
+</span>
+</div>
+
+</div>
+
+
+<!-- EXTRAS -->
+
+<div class="menu-card">
+
+<h3>
+الإضافات
+</h3>
+
+
+<div class="menu-item">
+<span class="item-name">
+فلفل هالبينو
+</span>
+<span class="price">
+2 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+جبنة
+</span>
+<span class="price">
+5 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+فطر
+</span>
+<span class="price">
+5 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+علبة صوص
+</span>
+<span class="price">
+2 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+خبزة سمون
+</span>
+<span class="price">
+1 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+اصبع كرسبي
+</span>
+<span class="price">
+5 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+قطعة دجاج
+</span>
+<span class="price">
+7 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+بطاطا صغير
+</span>
+<span class="price">
+7 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+بطاطا كبير
+</span>
+<span class="price">
+12 ₪
+</span>
+</div>
+
+</div>
+
+
+<!-- DRINKS -->
+
+<div class="menu-card">
+
+<h3>
+المشروبات
+</h3>
+
+
+<div class="menu-item">
+<span class="item-name">
+كولا صغير
+</span>
+<span class="price">
+4 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+كولا كبير
+</span>
+<span class="price">
+5 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+بلو
+</span>
+<span class="price">
+5 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+اكس ال
+</span>
+<span class="price">
+5 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+صودا
+</span>
+<span class="price">
+6 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+ماء صغير
+</span>
+<span class="price">
+2 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+ماء كبير
+</span>
+<span class="price">
+3 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+عصير صغير
+</span>
+<span class="price">
+4 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+عصير كبير
+</span>
+<span class="price">
+6 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+شويبس
+</span>
+<span class="price">
+5 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+كازوز
+</span>
+<span class="price">
+5 ₪
+</span>
+</div>
+
+
+<div class="menu-item">
+<span class="item-name">
+عصير اطفال
+</span>
+<span class="price">
+2 ₪
+</span>
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ORDER
+========================= -->
+
+<section
+class="order-section"
+id="order"
+>
+
+<div class="container">
+
+<div class="order-box">
+
+<h2>
+اطلب الآن
+</h2>
+
+<p>
+اختر رقم واتساب وتواصل معنا مباشرة
+</p>
+
+
+<div class="whatsapp-buttons">
+
+
+<a
+class="whatsapp"
+href="https://wa.me/972515178894"
+target="_blank"
+>
+
+واتساب
+051-517-8894
+
+</a>
+
+
+<a
+class="whatsapp"
+href="https://wa.me/972515881483"
+target="_blank"
+>
+
+واتساب
+051-588-1483
+
+</a>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section
+class="contact"
+id="contact"
+>
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>
+تواصل معنا
+</h2>
+
+<p>
+Lia Premium
+</p>
+
+</div>
+
 
 <div class="contact-grid">
 
-<div class="contact-card">
-<h3>📱 الهاتف</h3>
-<a href="tel:+972515178894">051-517-8894</a>
-</div>
 
 <div class="contact-card">
-<h3>📞 الهاتف الآخر</h3>
-<a href="tel:+972515881483">051-588-1483</a>
+
+<div class="icon">
+📱
 </div>
+
+<h3>
+الهاتف
+</h3>
+
+<a href="tel:+972515178894">
+
+051-517-8894
+
+</a>
+
+</div>
+
 
 <div class="contact-card">
-<h3>💬 WhatsApp</h3>
-<a href="https://wa.me/972515178894" target="_blank">طلب عبر واتساب — الرقم الأول</a>
+
+<div class="icon">
+📱
 </div>
+
+<h3>
+الهاتف الآخر
+</h3>
+
+<a href="tel:+972515881483">
+
+051-588-1483
+
+</a>
+
+</div>
+
 
 <div class="contact-card">
-<h3>💬 WhatsApp</h3>
-<a href="https://wa.me/972515881483" target="_blank">طلب عبر واتساب — الرقم الثاني</a>
+
+<div class="icon">
+📍
 </div>
+
+<h3>
+الموقع
+</h3>
+
+<a
+href="https://maps.apple/p/6u~E6gAGFhY9Fc"
+target="_blank"
+>
+
+فتح الموقع على Apple Maps
+
+</a>
+
+</div>
+
 
 <div class="contact-card">
-<h3>📸 Instagram</h3>
-<a href="https://www.instagram.com/liapremium139?stkn=d21lbzJ3aGIybzd3" target="_blank">@liapremium139</a>
+
+<div class="icon">
+💬
 </div>
 
-<div class="contact-card">
-<h3>🎵 TikTok</h3>
-<a href="https://www.tiktok.com/@lia.premium0?_r=1&_t=ZS-99rRVUjZ92y" target="_blank">@lia.premium0</a>
-</div>
+<h3>
+WhatsApp
+</h3>
 
-<div class="contact-card">
-<h3>📘 Facebook</h3>
-<a href="https://www.facebook.com/share/14p3Uv9UnMg/?mibextid=wwXIfr" target="_blank">صفحة Facebook</a>
-</div>
+<a
+href="https://wa.me/972515178894"
+target="_blank"
+>
 
-<div class="contact-card">
-<h3>📍 الموقع</h3>
-<a href="https://maps.apple/p/6u~E6gAGFhY9Fc" target="_blank">فتح الموقع على Apple Maps</a>
-</div>
+إرسال طلب عبر واتساب
+
+</a>
 
 </div>
+
+
 </div>
+
+
+<div class="socials">
+
+
+<a
+class="social"
+href="https://www.facebook.com/share/14p3Uv9UnMg/?mibextid=wwXIfr"
+target="_blank"
+>
+
+Facebook
+
+</a>
+
+
+<a
+class="social"
+href="https://www.instagram.com/liapremium139"
+target="_blank"
+>
+
+Instagram
+
+</a>
+
+
+<a
+class="social"
+href="https://www.tiktok.com/@lia.premium0"
+target="_blank"
+>
+
+TikTok
+
+</a>
+
+
+</div>
+
+
+</div>
+
 </section>
 
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
-<p>© 2026 <strong>Lia Premium</strong> — Fast Food</p>
+
+<p>
+© 2026
+<strong>Lia Premium</strong>
+</p>
+
+<p>
+Fast Food • Fresh Taste
+</p>
+
 </footer>
 
+
+<!-- =========================
+     MOBILE MENU BAR
+========================= -->
+
+<div class="mobile-bar">
+
+
+<a href="#home">
+
+<span>⌂</span>
+
+الرئيسية
+
+</a>
+
+
+<a href="#menu">
+
+<span>🍔</span>
+
+المينو
+
+</a>
+
+
+<a
+href="#order"
+class="main"
+>
+
+<span>📱</span>
+
+اطلب الآن
+
+</a>
+
+
+<a
+href="https://maps.apple/p/6u~E6gAGFhY9Fc"
+target="_blank"
+>
+
+<span>📍</span>
+
+الموقع
+
+</a>
+
+
+<a href="#contact">
+
+<span>☰</span>
+
+المزيد
+
+</a>
+
+
+</div>
+
+
 </body>
+
 </html>
